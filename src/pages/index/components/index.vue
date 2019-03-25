@@ -1,0 +1,75 @@
+<template>
+    <el-container>
+        <el-header ref="nav" height='' class="nav">
+            <header-com></header-com>
+        </el-header>
+        <router-view/>
+        <el-footer height='' class="footer">
+            <footerCom></footerCom>
+        </el-footer>
+    </el-container>
+</template>
+<script>
+export default {
+    name: 'blog',
+    components: {
+        headerCom: () => import('@/pages/index/components/modules/header.vue'),
+        footerCom: () => import('@/pages/index/components/modules/footer.vue')
+    },
+    mounted () {
+        // // this.$refs.nav
+        // window.onscroll = (e) => {
+        //     console.info(document.body.scrollTop)
+        //     if (document.body.scrollTop > 60) {
+        //     }
+        // }
+    }
+};
+
+</script>
+<style scoped lang='scss'>
+@import '~@/assets/scss/caculate.scss';
+.el-header {
+    height: rem(60);
+    padding: 0;
+    background: -webkit-gradient(linear, 78% 100%, 78% 41%, from(#EFEEEC), to(#fff))
+}
+
+.el-footer {
+    margin-top: rem(50);
+    height: rem(371);
+    background-color: #242221;
+    border-top: 9px solid #f16e50;
+    color: #333;
+}
+
+
+.layout {
+  margin: 0 auto;
+  height: 100%;
+}
+
+@media screen and (min-width: 960px) {
+  .layout {
+      width: 960px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .layout {
+    width: 100%;
+  }
+
+  .nav {
+      position: fixed;
+      z-index: 9999;
+      bottom: 0;
+      border-top: 5px solid #DDD6CC;
+  }
+  .footer {
+      display: none;
+  }
+}
+
+
+</style>

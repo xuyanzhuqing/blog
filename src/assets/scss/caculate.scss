@@ -1,0 +1,17 @@
+@import './variable.scss';
+
+@function rem ($px: 0) {
+	@return $px/$rootSize * 1rem;
+}
+
+.auto {
+	width: 100%;
+	height: 100%;	
+}
+
+.el-carousel  {
+	@extend .auto;
+	.el-carousel__container, .el-carousel__indicators {
+		@extend .auto;
+	}
+}
