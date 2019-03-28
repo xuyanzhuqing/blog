@@ -4,7 +4,7 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 import http from 'axios';
-import './axios/permission';
+import './permission';
 
 /* coodmirror */
 import VueCodemirror from 'vue-codemirror';

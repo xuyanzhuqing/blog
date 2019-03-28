@@ -3,12 +3,25 @@
 </template>
 
 <script>
+
 export default {
     name: 'App',
     data () {
         return {};
     },
-    methods: {}
+    mounted () {
+        // this.countVisitor();
+    },
+    methods: {
+        // // 发送请求统计访问量
+        // countVisitor () {
+        //     this.$http.post('/api/count/create', {}).then(res => {
+        //         debugger
+        //     }).catch((err) => {
+        //         console.error(err);
+        //     });
+        // }
+    }
 };
 </script>
 

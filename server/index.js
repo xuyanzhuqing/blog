@@ -6,6 +6,7 @@ const email_api = require('./api/email');
 const image_api = require('./api/upload/image');
 const home_api = require('./api/home');
 const user_api = require('./api/user');
+const count_api = require('./api/count');
 
 // 引入文件模块
 const fs = require('fs');
@@ -27,6 +28,7 @@ app.use(email_api);
 app.use(image_api);
 app.use(home_api);
 app.use(user_api);
+app.use(count_api);
 
 // 访问静态资源文件 这里是访问所有dist目录下的静态资源文件
 app.use(express.static(path.resolve(__dirname, '../dist/')))

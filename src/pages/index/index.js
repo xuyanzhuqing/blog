@@ -3,15 +3,18 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
-import http from 'axios';
-import './axios/permission';
+import './permission';
 
+import http from 'axios';
+// import mock from '@/mock';
+// mock.init();
 
 // /* iconfont */
 import '@/assets/iconfont/iconfont.css';
 import '@/assets/iconfont/iconfont.js';
 
 import 'animate.css';
+
 
 // 引入element-ui组件
 import {
@@ -37,7 +40,8 @@ import {
     Main,
     Footer,
     Loading,
-    Scrollbar
+    Scrollbar,
+    Tag
 } from 'element-ui';
 
 
@@ -63,16 +67,17 @@ Vue.use(Aside);
 Vue.use(Main);
 Vue.use(Footer);
 Vue.use(Scrollbar);
+Vue.use(Tag);
 
 Vue.use(Loading.directive);
 
 Vue.prototype.$loading = Loading.service;
+Vue.prototype.$http = http;
 
 // 设置尺寸
 Vue.prototype.$ELEMENT = { size: 'small', zIndex: 3000 };
 
 Vue.config.productionTip = false;
-Vue.prototype.$http = http;
 
 /* eslint-disable no-new */
 new Vue({

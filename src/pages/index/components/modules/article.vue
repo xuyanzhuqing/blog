@@ -97,7 +97,7 @@ export default {
 </script>
 <style lang='scss'>
 .articles {
-    font-family: 宋体, "Arial Narrow", HELVETICA;
+    font-family: arial 宋体, "Arial Narrow", HELVETICA;
     .el-main {
         padding: 5px;
         background: #fff;
@@ -117,9 +117,22 @@ export default {
         width: 100%;
     }
     .text {
-        font-size: 14px;
+	    position: relative;
+        overflow: hidden;
+        height: 300px;
         padding: 20px 40px;
+        font-size: 16px;
         text-align: left;
+        &::after {
+	        content: '';
+	        text-align: right;
+	        position: absolute;
+	        bottom: 0;
+	        right: 0;
+	        width: 10%;
+	        height: 1.8em;
+	        background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
+	    }
         p {
             line-height: 24px;
             margin-bottom: 10px;

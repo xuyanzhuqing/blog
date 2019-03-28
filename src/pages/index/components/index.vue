@@ -10,6 +10,8 @@
     </el-container>
 </template>
 <script>
+// import {requseLogin} from "@/axios/api";
+
 export default {
     name: 'blog',
     components: {
@@ -17,12 +19,16 @@ export default {
         footerCom: () => import('@/pages/index/components/modules/footer.vue')
     },
     mounted () {
-        // // this.$refs.nav
-        // window.onscroll = (e) => {
-        //     console.info(document.body.scrollTop)
-        //     if (document.body.scrollTop > 60) {
-        //     }
-        // }
+        //  mockjs 调用实例
+
+        // requseLogin({
+        //     username: 'admin',
+        //     password: '123456'
+        // }).then(res => {
+        //     debugger
+        // }).catch(err => {
+        //     console.info(err);
+        // })
     }
 };
 

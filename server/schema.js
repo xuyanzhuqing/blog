@@ -45,5 +45,10 @@ module.exports =  {
 	},
 	User: {
 		logo: String
+	},
+	Count: {
+		num: Number,
+		lastModified: Date,
+		ip: Number
 	}
 };

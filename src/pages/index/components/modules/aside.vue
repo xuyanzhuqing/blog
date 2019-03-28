@@ -26,7 +26,7 @@
         <dl class="taglist">
             <dt class="subTitle">全部标签</dt>
             <dd>
-                <span class="tag" type="text" round v-for='(v, i) in sideMsg.tag' :key='i'>{{v.text}}</span>
+                <el-tag class="tag" type="text" round v-for='(v, i) in sideMsg.tag' :key='i'>{{v.text}}</el-tag>
             </dd>
         </dl>
         <emailCom :visiable="dialogFormVisible" @close="dialogFormVisible = false"/>
@@ -198,12 +198,12 @@ export default {
         font-size: 14px;
     }
 
-    .tagList dd {
-        word-wrap: wrap;
-        .tag {
-            color: #f16e50;
-            padding: 2px 5px;
-        }
+    .taglist dd {
+        padding: 15px 0;
+    }
+
+    .tag {
+        margin: 3px;
     }
     
 </style>
