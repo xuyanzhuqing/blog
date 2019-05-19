@@ -15,7 +15,6 @@ import '@/assets/iconfont/iconfont.js';
 
 import 'animate.css';
 
-
 // 引入element-ui组件
 import {
     Pagination,
@@ -43,7 +42,6 @@ import {
     Scrollbar,
     Tag
 } from 'element-ui';
-
 
 Vue.use(Pagination);
 Vue.use(Dialog);

@@ -5,9 +5,6 @@
             <svg class="icon" aria-hidden="true">
                 <use :xlink:href='setIcon(v)'></use>
             </svg>
-            <!-- <audio src="/static/music/成都.mp3" autoplay="autoplay">
-                Your browser does not support the audio element.
-            </audio> -->
         </el-menu-item>
     </el-menu>
 </template>

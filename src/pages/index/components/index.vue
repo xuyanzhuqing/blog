@@ -18,9 +18,12 @@ export default {
         headerCom: () => import('@/pages/index/components/modules/header.vue'),
         footerCom: () => import('@/pages/index/components/modules/footer.vue')
     },
+    activated () {
+        console.info('111')
+    },
+    deactivated () {},
     mounted () {
         //  mockjs 调用实例
-
         // requseLogin({
         //     username: 'admin',
         //     password: '123456'
@@ -38,7 +41,7 @@ export default {
 .el-header {
     height: rem(60);
     padding: 0;
-    background: -webkit-gradient(linear, 78% 100%, 78% 41%, from(#EFEEEC), to(#fff))
+    // background: -webkit-gradient(linear, 78% 100%, 78% 41%, from(rgb(252, 227, 221)), to(#fff))
 }
 
 .el-footer {
@@ -48,7 +51,6 @@ export default {
     border-top: 9px solid #f16e50;
     color: #333;
 }
-
 
 .layout {
   margin: 0 auto;
@@ -76,6 +78,5 @@ export default {
       display: none;
   }
 }
-
 
 </style>

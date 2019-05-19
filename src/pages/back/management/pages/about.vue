@@ -1,13 +1,15 @@
 <template>
-	<div id='backAbout'>about</div>
+  <div id="backAbout">about</div>
 </template>
+
 <script>
 export default {
-    name: 'backAbout',
-    data () {
-        return {};
-    },
-    components: {}
+  name: "BackAbout",
+  data() {
+    return {};
+  },
+  components: {}
 };
 </script>
+
 <style scoped lang="scss"></style>

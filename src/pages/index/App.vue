@@ -28,6 +28,6 @@ export default {
 <style lang='scss'>
 @import '~@/assets/scss/reset.scss';
 body {
-    background-color: #DDD6CC;
+    background-color: #f5f7f9;
 }
 </style>

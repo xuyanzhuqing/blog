@@ -48,7 +48,9 @@ export default {
 <style scoped lang='scss'>
 @import '~@/assets/scss/caculate.scss';
 .aside-msg {
+    background: #fff;
     width: rem(270);
+    margin-right: rem(5)
 }
 .el-main {
     padding: 0;

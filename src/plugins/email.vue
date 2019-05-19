@@ -23,7 +23,7 @@
 </template>
 <script>
 /* 全局引入富文本编辑器 */
-import {quillEditor} from 'vue-quill-editor';
+import { quillEditor } from 'vue-quill-editor';
 // // require styles
 import 'quill/dist/quill.core.css';
 import 'quill/dist/quill.snow.css';
@@ -51,8 +51,8 @@ export default {
         return {
             ...dialog,
             form: {},
-            mailLoading: false,
-        }
+            mailLoading: false
+        };
     },
     mounted () {
         this.initData();
@@ -63,12 +63,12 @@ export default {
             this.initData();
         },
         initData () {
-            const empty =  {
+            const empty = {
                 title: '',
                 content: '',
                 contect: ''
             };
-            this.$set(this, 'form',empty);
+            this.$set(this, 'form', empty);
         },
         sendMail () {
             this.mailLoading = true;
@@ -88,11 +88,10 @@ export default {
 
         }
     }
-    
-}
+
+};
 </script>
 <style scoped lang="scss">
 
 </style>
-
 
