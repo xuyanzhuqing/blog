@@ -9,7 +9,7 @@
     </div>
 </template>
 <script>
-import tableCom from '../modules/table.vue';
+import tableCom from '@/pages/back/components/table.vue';
 export default {
     data () {
         return {

@@ -5,7 +5,7 @@
                 发现乐趣，发现自己
             </dt>
             <dd>
-                <iframe src="/static/plugins/html5-text-pixel/index.html" frameborder="0" width='100%' height='700rem'>
+                <iframe src="/static/lib/html5-text-pixel/index.html" frameborder="0" width='100%' height='700rem'>
                 </iframe>
             </dd>
         </dl>
@@ -20,9 +20,9 @@
     </div>
 </template>
 <script>
-import headerCom from '@/pages/index/components/modules/header.vue';
-import footerCom from '@/pages/index/components/modules/footer.vue';
-import mapboxCom from '@/plugins/mapbox.vue';
+import headerCom from '@/pages/index/components/header.vue';
+import footerCom from '@/pages/index/components/footer.vue';
+import mapboxCom from '@/components/mapbox.vue';
 
 export default {
     name: 'blog',

@@ -41,7 +41,7 @@
   </el-container>
 </template>
 <script>
-import editor from '@/plugins/editor.vue';
+import editor from '@/components/editor.vue';
 import marked from 'marked';
 
 export default {

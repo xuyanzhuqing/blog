@@ -18,7 +18,7 @@
     </el-container>
 </template>
 <script>
-import backSide from '@/pages/back/management/modules/aside.vue';
+import backSide from '@/pages/back/components/aside.vue';
 export default {
     name: 'management',
     data () {

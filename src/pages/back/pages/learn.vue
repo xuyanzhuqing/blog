@@ -44,8 +44,8 @@
 </template>
 <script>
 import Vue from 'vue';
-import editor from '@/plugins/editor.vue';
-import tableCom from '@/pages/back/management/modules/table.vue';
+import editor from '@/components/editor.vue';
+import tableCom from '@/pages/back/components/table.vue';
 export default {
     name: 'backLearn',
     components: {
@@ -143,7 +143,8 @@ export default {
             this.$http.post('/api/learn/pull', { id }).then((res) => {
                 success && success(res.data);
             }).catch((err) => {
-                error && error(res.data);
+                // err && err(res.data);
+                console.info(err);
             });
         },
         // 提交保存

@@ -2,7 +2,7 @@
   <div style="height: 100%; background: #eee">
     <iframe
       class="bg"
-      src="/static/plugins/html5-text-pixel/index.html"
+      src="/static/lib/html5-text-pixel/index.html"
       frameborder="0"
       width="100%"
       height="700rem"
@@ -22,7 +22,7 @@
         <el-input type="password" v-model.trim="model.password" clearable auto-complete></el-input>
       </el-form-item>
       <el-form-item v-if="!isLogin" label="确认密码" prop="checkPass">
-        <el-input type="password" v-model.tirm="model.checkPass" clearable auto-complete></el-input>
+        <el-input type="password" v-model.trim="model.checkPass" clearable auto-complete></el-input>
       </el-form-item>
       <el-form-item>
         <el-button style="width:100%" type="primary" @click="submit">{{!isLogin ? '注册' : '登陆'}}</el-button>
@@ -102,6 +102,7 @@ export default {
                             type: 'error',
                             message: '用户名密码不正确'
                         });
+                        break;
                     case 2:
                         this.$message({
                             type: 'success',

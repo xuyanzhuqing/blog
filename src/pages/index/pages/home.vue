@@ -9,8 +9,8 @@
     </el-container>
 </template>
 <script>
-import asideCom from '@/pages/index/components/modules/aside.vue';
-import articleCom from '@/pages/index/components/modules/article.vue';
+import asideCom from '@/pages/index/components/aside.vue';
+import articleCom from '@/pages/index/components/article.vue';
 
 export default {
     name: 'index',
@@ -38,7 +38,7 @@ export default {
             this.$http.post('/api/learn/pull', { id }).then(res => {
                 success && success(res.data);
             }).catch((err) => {
-                error && error(res.data);
+                console.info(err);
             });
         }
     }

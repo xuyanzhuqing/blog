@@ -11,13 +11,6 @@ import VueCodemirror from 'vue-codemirror';
 import 'codemirror/lib/codemirror.css';
 import marked from 'marked';
 
-/* 全局引入富文本编辑器 */
-import VueQuillEditor from 'vue-quill-editor';
-// require styles
-import 'quill/dist/quill.core.css';
-import 'quill/dist/quill.snow.css';
-import 'quill/dist/quill.bubble.css';
-
 /* iconfont */
 import '@/assets/iconfont/iconfont.css';
 import '@/assets/iconfont/iconfont.js';
@@ -97,7 +90,6 @@ import {
     Scrollbar
 } from 'element-ui';
 Vue.use(VueCodemirror, {});
-Vue.use(VueQuillEditor /* { default global options } */);
 
 /* svg.js */
 const SVG = require('svg.js/dist/svg.min.js');

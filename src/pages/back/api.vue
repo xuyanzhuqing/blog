@@ -51,7 +51,6 @@ export default {
         });
         return {
             form: renderBox,
-            status: '',
             check: {},
             data: {},
             list: [],
@@ -64,48 +63,51 @@ export default {
         },
         update (param) {
             this.$http.post('/api/login/updateAccount', param)
-                .then(function (response) {
-                    console.log(response);
+                .then((res) => {
+                    console.log(res);
                 })
-                .catch(function (err) {
+                .catch((err) => {
                     console.log(err);
                 });
         },
         remove (param) {
             this.$http.post('/api/login/removeAccount', param)
-                .then(function (response) {
-                    console.log(response);
+                .then((res) => {
+                    console.log(res);
                 })
-                .catch(function (err) {
+                .catch((err) => {
                     console.log(err);
                 });
         },
         login (param) {
             const me = this;
             this.$http.post('/api/login/loginIn', param)
-                .then(function (response) {
+                .then((res) => {
                     me.status = '登陆成功';
+                    console.info(res);
                 })
-                .catch(function (err) {
+                .catch((err) => {
                     me.status = '登陆失败';
+                    console.info(err);
                 });
         },
         create (param) {
-            const { account, password } = this;
+            // const { account, password } = this;
             this.$http.post('/api/login/createAccount', param)
-                .then(function (response) {
+                .then((res) => {
                     // 通知组件更新用户
+                    console.info(res);
                 })
-                .catch(function (err) {
+                .catch((err) => {
                     console.log(err);
                 });
         },
         getAll (param) {
             this.$http.get('/api/login/getAccount', param)
-                .then(function (response) {
-                    console.log(response);
+                .then((res) => {
+                    console.log(res);
                 })
-                .catch(function (err) {
+                .catch((err) => {
                     console.log(err);
                 });
         }

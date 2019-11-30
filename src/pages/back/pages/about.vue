@@ -4,11 +4,11 @@
 
 <script>
 export default {
-  name: "BackAbout",
-  data() {
-    return {};
-  },
-  components: {}
+    name: 'BackAbout',
+    data () {
+        return {};
+    },
+    components: {}
 };
 </script>
 

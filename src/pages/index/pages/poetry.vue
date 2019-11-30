@@ -82,15 +82,15 @@
                 </el-container>
             </el-collapse-item>
         </el-collapse>
-        <emailCom :visiable='dialogFormVisible' @close="dialogFormVisible=false"/>
+        <emailCom :visiable.sync='dialogFormVisible'/>
     </el-container>
 </template>
 <script>
-import headerCom from '@/pages/index/components/modules/header.vue';
-import footerCom from '@/pages/index/components/modules/footer.vue';
+import headerCom from '@/pages/index/components/header.vue';
+import footerCom from '@/pages/index/components/footer.vue';
 import Vue from 'vue';
 
-import emailCom from '@/plugins/email.vue';
+import emailCom from '@/components/email.vue';
 /* svg.js */
 // const SVG = require('svg.js/dist/svg.min.js');
 
@@ -149,9 +149,9 @@ export default {
             return Math.ceil(Math.random() * top);
         },
         rockData (isInit) {
-            const { modules, createRandom, createSvg } = this;
-            const len = modules.flyFlower.keywords.split('|').length;
-            this.random = createRandom();
+            // const { modules, createRandom, createSvg } = this;
+            // const len = modules.flyFlower.keywords.split('|').length;
+            // this.random = createRandom();
             // isInit && createSvg();
         },
         pullPoetryList (id = '') {

@@ -25,11 +25,6 @@ export default {
             }
         };
     },
-    watch: {
-        map (n, o) {
-            const map = this.map;
-        }
-    },
     methods: {
         setMap (map) {
             this.map = map;

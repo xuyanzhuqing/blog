@@ -1,5 +1,5 @@
 <template>
-    <el-dialog :visible.sync="visiable" v-loading='mailLoading'>
+    <el-dialog :visible.sync="show" v-loading='mailLoading'>
         <template slot='title'>
             <i class="el-icon-message"></i> 私信
         </template>
@@ -22,17 +22,14 @@
     </el-dialog>
 </template>
 <script>
-/* 全局引入富文本编辑器 */
-import { quillEditor } from 'vue-quill-editor';
-// // require styles
 import 'quill/dist/quill.core.css';
 import 'quill/dist/quill.snow.css';
 import 'quill/dist/quill.bubble.css';
 
+import { quillEditor } from 'vue-quill-editor';
 export default {
     name: 'Email',
     components: {
-        // 引入富文本编辑器
         quillEditor
     },
     props: {
@@ -53,6 +50,17 @@ export default {
             form: {},
             mailLoading: false
         };
+    },
+    computed: {
+        show: {
+            get () {
+                return this.visiable;
+            },
+            set (v) {
+                this.$emit('update:visiable', v);
+            }
+        }
+
     },
     mounted () {
         this.initData();
@@ -85,7 +93,6 @@ export default {
         onEditorBlur (e) {},
         onEditorFocus (e) {},
         onEditorReady (e) {
-
         }
     }
 

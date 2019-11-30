@@ -48,11 +48,11 @@
         <el-tag class="tag" type="text" round v-for="(v, i) in tag" :key="i">{{v.text}}</el-tag>
       </dd>
     </dl>
-    <emailCom :visiable="dialogFormVisible" @close="dialogFormVisible = false"/>
+    <emailCom :visiable.sync="dialogFormVisible"/>
   </aside>
 </template>
 <script>
-import emailCom from '@/plugins/email.vue';
+import emailCom from '@/components/email.vue';
 import axios from 'axios';
 
 export default {

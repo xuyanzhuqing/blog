@@ -15,11 +15,11 @@
 export default {
     name: 'blog',
     components: {
-        headerCom: () => import('@/pages/index/components/modules/header.vue'),
-        footerCom: () => import('@/pages/index/components/modules/footer.vue')
+        headerCom: () => import('@/pages/index/components/header.vue'),
+        footerCom: () => import('@/pages/index/components/footer.vue')
     },
     activated () {
-        console.info('111')
+        console.info('111');
     },
     deactivated () {},
     mounted () {

@@ -39,9 +39,10 @@
         <template v-else-if='module.includes("focus")'>
             focus
         </template>
-        <template v-else='module.includes("friendLink")'>
+        <template v-else-if='module.includes("friendLink")'>
             friendLink
         </template>
+        <template v-else></template>
     </div>
 </template>
 <script>

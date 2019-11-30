@@ -7,7 +7,6 @@ import NProgress from 'nprogress'; // progress bar
 import 'nprogress/nprogress.css'; // progress bar style
 NProgress.configure({ showSpinner: false });// NProgress Configuration
 
-
 // // permission judge function
 // function hasPermission (roles, permissionRoles) {
 //     if (roles.indexOf('admin') >= 0) return true; // admin permission passed directly

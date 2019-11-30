@@ -8,29 +8,29 @@ export default new Router({
         {
             path: '*',
             name: 404,
-            component: r => require.ensure([], () => r(require('@/pages/404.vue')))
+            component: r => require.ensure([], () => r(require('@/components/404.vue')))
         },
         {
             path: '/',
             name: 'Blog',
-            component: r => require.ensure([], () => r(require('@/pages/index/components/index'))),
+            component: r => require.ensure([], () => r(require('@/pages/index/pages/index'))),
             redirect: 'home',
             children: [{
                 path: '/home',
                 name: 'home',
-                component: r => require.ensure([], () => r(require('@/pages/index/components/pages/home')))
+                component: r => require.ensure([], () => r(require('@/pages/index/pages/home')))
             }, {
                 path: '/learn',
                 name: 'learn',
-                component: r => require.ensure([], () => r(require('@/pages/index/components/pages/learn')))
+                component: r => require.ensure([], () => r(require('@/pages/index/pages/learn')))
             }, {
                 path: '/poetry',
                 name: 'poetry',
-                component: r => require.ensure([], () => r(require('@/pages/index/components/pages/poetry')))
+                component: r => require.ensure([], () => r(require('@/pages/index/pages/poetry')))
             }, {
                 path: '/about',
                 name: 'about',
-                component: r => require.ensure([], () => r(require('@/pages/index/components/pages/about')))
+                component: r => require.ensure([], () => r(require('@/pages/index/pages/about')))
             }]
         }
     ]

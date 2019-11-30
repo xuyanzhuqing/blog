@@ -6,6 +6,7 @@ import router from './router';
 import './permission';
 
 import http from 'axios';
+// import Vuex from 'vuex';
 // import mock from '@/mock';
 // mock.init();
 
@@ -14,6 +15,8 @@ import '@/assets/iconfont/iconfont.css';
 import '@/assets/iconfont/iconfont.js';
 
 import 'animate.css';
+
+// const store = new Vuex.Store({});
 
 // 引入element-ui组件
 import {
@@ -81,6 +84,7 @@ Vue.config.productionTip = false;
 new Vue({
     el: '#app',
     router,
+    // store,
     components: { App },
     template: '<App/>'
 });

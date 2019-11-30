@@ -42,13 +42,15 @@
         </el-header>
         <el-container>
             <el-aside v-if='showAll' width='' class='treeList'>
-                <el-tree class="filter-tree" :data="treeList" :props="{
-			          children: 'children',
-			          label: 'label'
-			        }" default-expand-all :filter-node-method="filterNode" ref="tree2">
+                <el-tree ref="tree2"
+                        class="filter-tree"
+                        :data="treeList"
+                        :props="{ children: 'children', label: 'label'}"
+                        default-expand-all
+                        :filter-node-method="filterNode">
                     <span class="custom-tree-node" slot-scope="{ node, data }">
-        				<router-link :to='"/learn?id=" + data.id'>{{ node.label }}</router-link>
-        			</span>
+                        <router-link :to='"/learn?id=" + data.id'>{{ node.label }}</router-link>
+                    </span>
                 </el-tree>
                 <!-- <div class='treeCtrl'></div> -->
             </el-aside>
@@ -59,10 +61,10 @@
     </el-container>
 </template>
 <script>
-import headerCom from '@/pages/index/components/modules/header.vue';
-import footerCom from '@/pages/index/components/modules/footer.vue';
-import articleCom from '@/pages/index/components/modules/article.vue';
-import asideCom from '@/pages/index/components/modules/aside.vue';
+import headerCom from '@/pages/index/components/header.vue';
+import footerCom from '@/pages/index/components/footer.vue';
+import articleCom from '@/pages/index/components/article.vue';
+import asideCom from '@/pages/index/components/aside.vue';
 
 export default {
     name: 'blog',
