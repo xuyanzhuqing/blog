@@ -7,9 +7,9 @@ import http from 'axios';
 import './permission';
 
 /* coodmirror */
-import VueCodemirror from 'vue-codemirror';
-import 'codemirror/lib/codemirror.css';
 import marked from 'marked';
+
+Vue.use(window.VueCodemirror, {});
 
 /* iconfont */
 import '@/assets/iconfont/iconfont.css';
@@ -89,10 +89,6 @@ import {
     Notification,
     Scrollbar
 } from 'element-ui';
-Vue.use(VueCodemirror, {});
-
-/* svg.js */
-const SVG = require('svg.js/dist/svg.min.js');
 
 Vue.use(Pagination);
 Vue.use(Dialog);
@@ -175,7 +171,7 @@ Vue.prototype.$ELEMENT = { size: 'small', zIndex: 3000 };
 Vue.config.productionTip = false;
 Vue.prototype.$http = http;
 Vue.prototype.$marked = marked;
-Vue.prototype.$svg = SVG;
+Vue.prototype.$svg = window.SVG;
 
 /* eslint-disable no-new */
 new Vue({

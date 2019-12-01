@@ -61,8 +61,6 @@
     </el-container>
 </template>
 <script>
-import headerCom from '@/pages/index/components/header.vue';
-import footerCom from '@/pages/index/components/footer.vue';
 import articleCom from '@/pages/index/components/article.vue';
 import asideCom from '@/pages/index/components/aside.vue';
 
@@ -147,8 +145,6 @@ export default {
         }
     },
     components: {
-        headerCom,
-        footerCom,
         articleCom,
         asideCom
     }

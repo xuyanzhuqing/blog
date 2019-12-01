@@ -80,6 +80,8 @@ Vue.prototype.$ELEMENT = { size: 'small', zIndex: 3000 };
 
 Vue.config.productionTip = false;
 
+Vue.use(window.VueQuillEditor);
+
 /* eslint-disable no-new */
 new Vue({
     el: '#app',

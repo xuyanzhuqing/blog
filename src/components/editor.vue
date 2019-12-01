@@ -33,8 +33,9 @@ export default {
                     lineNumbers: true,
                     lineWrapping: false,
                     line: true,
+                    // text/javascript 目前也支持
                     mode: 'text/x-markdown',
-                    theme: 'lesser-dark'
+                    theme: 'monokai'
                 };
             }
         }

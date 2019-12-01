@@ -86,19 +86,12 @@
     </el-container>
 </template>
 <script>
-import headerCom from '@/pages/index/components/header.vue';
-import footerCom from '@/pages/index/components/footer.vue';
 import Vue from 'vue';
-
 import emailCom from '@/components/email.vue';
-/* svg.js */
-// const SVG = require('svg.js/dist/svg.min.js');
 
 export default {
     name: 'blog',
     components: {
-        headerCom,
-        footerCom,
         emailCom
     },
     data () {

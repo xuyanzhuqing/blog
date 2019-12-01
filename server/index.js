@@ -1,4 +1,4 @@
-const port = 8081;
+const port = 80;
 // 引入文件模块
 const fs = require('fs');
 // 引入处理路径的模块

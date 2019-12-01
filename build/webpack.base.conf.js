@@ -87,10 +87,15 @@ module.exports = {
     tls: 'empty',
     child_process: 'empty'
   },
-  // externals: {
-    // 'vue': 'Vue',
+  externals: {
+    'vue': 'Vue',
     // 'vue-router': 'VueRouter',
-    // 'vuex': 'Vuex',
-    // 'axios': 'axios'
-  // }
+    'vuex': 'Vuex',
+    'axios': 'axios',
+    'element-ui':'ElementUI',
+    'mapbox-gl': 'mapboxgl',
+    'quill': 'quill',
+    'codemirror': 'codemirror',
+    'marked': 'marked'
+  }
 }
