@@ -10,7 +10,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
         //设置代理
-        '/api': 'http://localhost:8081'
+        '/api': 'http://localhost'
         // 生产环境
         // '/api': 'http://106.12.220.135'
     },

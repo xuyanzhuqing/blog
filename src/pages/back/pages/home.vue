@@ -1,11 +1,6 @@
 <template>
     <div id='backHome'>
         <template v-if='module.includes("icon")'>
-            <el-input v-model="input" placeholder="请输入内容">
-                <el-button slot="append" icon="el-icon-search"></el-button>
-            </el-input>
-            <el-transfer v-model="value" :data="data">
-            </el-transfer>
         </template>
         <template v-else-if='module.includes("logo")'>
             <el-upload
@@ -49,21 +44,7 @@
 export default {
     name: 'backHome',
     data () {
-        const generateData = _ => {
-            const data = [];
-            for (let i = 1; i <= 15; i++) {
-                data.push({
-                    key: i,
-                    label: `备选项 ${i}`,
-                    disabled: i % 4 === 0
-                });
-            }
-            return data;
-        };
         return {
-            value: [],
-            input: '',
-            data: generateData(),
             imageUrl: '',
             homeMsg: null
         };

@@ -44,7 +44,7 @@ export default new Router({
         {
             path: '/api',
             name: 'api',
-            component: r => require.ensure([], () => r(require('@/pages/back/api')))
+            component: r => require.ensure([], () => r(require('@/pages/back/components/api')))
         }
     ]
 });
