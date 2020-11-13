@@ -1,10 +1,10 @@
 <template>
     <el-menu ref="top" :default-active="activeIndex" class="layout top-header" mode="horizontal" router @select="handleSelect" background-color="" text-color='#484848' active-text-color="#ffd04b">
-        <el-menu-item v-for='v in modules.types' :index="'/' + v" v-show="true" class="transition-box" :key="v">
+        <el-menu-item v-for='v in modules' :index="'/' + v.value" v-show="true" class="transition-box" :key="v.value">
             <svg class="icon" aria-hidden="true">
-                <use :xlink:href='setIcon(v)'></use>
+                <use :xlink:href='setIcon(v.value)'></use>
             </svg>
-            {{v}}
+            {{v.label}}
         </el-menu-item>
     </el-menu>
 </template>
@@ -13,21 +13,24 @@ export default {
     data () {
         return {
             activeIndex: '1',
-            modules: {
-                types: ['home', 'learn', 'poetry', 'about'],
-                index: {
-
+            modules: [
+                {
+                    value: 'home',
+                    label: '首页'
                 },
-                learn: {
-
+                {
+                    value: 'learn',
+                    label: '妙笔随记'
                 },
-                poetry: {
-
+                {
+                    value: 'poetry',
+                    label: '诗文'
                 },
-                about: {
-
+                {
+                    value: 'about',
+                    label: '我的'
                 }
-            }
+            ]
         };
     },
     mounted () {},

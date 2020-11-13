@@ -5,22 +5,14 @@
       <article v-for="(v, i) in articleList.slice(pageStart, pageEnd)" :key="i">
         <dl>
           <dt class="title">
-            <el-row type="flex" class="row-bg" justify="space-between">
-              <el-col :span="isPagination ? 24: 22">
-                <a href="/">{{v[attr.title]}}</a>
-              </el-col>
-              <el-col :span="2" v-if="!isPagination">
-                <el-button icon="el-icon-arrow-left" @click="goBack"></el-button>
-              </el-col>
-            </el-row>
+            {{v[attr.title]}}
           </dt>
           <dd class="text" v-html="marked(v[attr.text])"></dd>
         </dl>
-        <div :class="{textfoot: isPagination}">
+        <div class="textfoot">
           <span>{{new Date(v.lastModified) | dateFtt('Y-M-d h:m:s')}}</span>
-          <router-link :to="attr.baseUrl + v.id" v-if="isPagination">
-            <el-tag type="success">阅读全文</el-tag>
-          </router-link>
+          <el-link v-if="isPagination" :underline="false" @click="() => $router.push(attr.baseUrl + v.id)"><i class="el-icon-view el-icon--right"></i> </el-link>
+          <i v-else class="el-icon-back" @click="goBack"></i>
         </div>
       </article>
       <article v-if="articleList.length == 0">
@@ -120,13 +112,11 @@ export default {
     margin-bottom: 20px;
   }
   .title {
-    // background: url(../images/titlebg.png) no-repeat 5% 80%;
-    font-size: 20px;
+    padding: 8px;
+    width: 100%;
     line-height: 28px;
     display: inline-block;
-    padding: 8px;
     border-bottom: 1px solid #e2e2e2;
-    width: 100%;
   }
   .text {
     position: relative;
@@ -157,13 +147,11 @@ export default {
   }
 
   .textfoot {
-    padding: 20px 60px;
-    border-top: 1px solid #dddcdb;
-    text-align: right;
-    box-shadow: #999 2px 2px 3px;
-    a {
-      margin-left: 10px;
-    }
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #dddcdb;
+    font-size: 12px;
   }
   .el-footer {
     background-color: #fff;

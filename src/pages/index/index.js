@@ -43,7 +43,8 @@ import {
     Footer,
     Loading,
     Scrollbar,
-    Tag
+    Tag,
+    Link
 } from 'element-ui';
 
 Vue.use(Pagination);
@@ -69,6 +70,7 @@ Vue.use(Main);
 Vue.use(Footer);
 Vue.use(Scrollbar);
 Vue.use(Tag);
+Vue.use(Link);
 
 Vue.use(Loading.directive);
 

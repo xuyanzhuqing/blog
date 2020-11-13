@@ -26,7 +26,6 @@ const controllers = require('require-all')({
     }
 });
 const api = Object.keys(controllers).filter(v => v !== 'upload');
-console.info(controllers.upload);
 api.forEach(v => app.use(controllers[v]));
 
 // 访问静态资源文件 这里是访问所有dist目录下的静态资源文件

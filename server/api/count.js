@@ -33,7 +33,6 @@ router.post('/api/count/pull', (req, res) => {
             if (more) {
                 res.send(data);
             } else {
-                console.info(data, '$$$$$$$$$$$$4');
                 const len = JSON.stringify(data.length);
                 res.send(len);
             }

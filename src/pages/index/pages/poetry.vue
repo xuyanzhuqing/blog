@@ -164,9 +164,6 @@ export default {
 </script>
 <style scoped lang='scss'>
 @import '~@/assets/scss/caculate.scss';
-.el-header {
-    background-color: #f16e50;
-}
 
 .el-footer {
     color: #333;

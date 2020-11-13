@@ -74,6 +74,4 @@ router.post('/api/image/delete', (req, res) => {
     });
 });
 
-console.info(__dirname, '&&&&')
-
 module.exports = router;
