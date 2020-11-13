@@ -6,7 +6,7 @@
         <dl>
           <dt class="title">
             <el-row type="flex" class="row-bg" justify="space-between">
-              <el-col :span="!isPagination ? 24: 22">
+              <el-col :span="isPagination ? 24: 22">
                 <a href="/">{{v[attr.title]}}</a>
               </el-col>
               <el-col :span="2" v-if="!isPagination">
@@ -17,7 +17,7 @@
           <dd class="text" v-html="marked(v[attr.text])"></dd>
         </dl>
         <div :class="{textfoot: isPagination}">
-          <span>{{new Date(v.lastModified)}}</span>
+          <span>{{new Date(v.lastModified) | dateFtt('Y-M-d h:m:s')}}</span>
           <router-link :to="attr.baseUrl + v.id" v-if="isPagination">
             <el-tag type="success">阅读全文</el-tag>
           </router-link>
@@ -43,6 +43,7 @@
 <script>
 import editor from '@/components/editor.vue';
 import marked from 'marked';
+import { dateFtt } from '@/utils/time.js';
 
 export default {
     name: 'articles',
@@ -97,6 +98,9 @@ export default {
     },
     components: {
         editor
+    },
+    filters: {
+        dateFtt
     }
 };
 </script>
@@ -112,12 +116,15 @@ export default {
       margin-bottom: rem(20);
     }
   }
+  article {
+    margin-bottom: 20px;
+  }
   .title {
     // background: url(../images/titlebg.png) no-repeat 5% 80%;
     font-size: 20px;
     line-height: 28px;
     display: inline-block;
-    padding: 38px 60px 8px 80px;
+    padding: 8px;
     border-bottom: 1px solid #e2e2e2;
     width: 100%;
   }
@@ -125,8 +132,9 @@ export default {
     position: relative;
     overflow: hidden;
     height: 300px;
-    padding: 20px 40px;
-    font-size: 16px;
+    padding: 10px;
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
     text-align: left;
     &::after {
       content: "";

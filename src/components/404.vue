@@ -1,5 +1,5 @@
 <script>
-import { IsMobile } from '@/utils/auth.js';
+import { IsMobile } from '@/utils/client.js';
 export default {
     name: 'ErrorPage',
     beforeCreate () {

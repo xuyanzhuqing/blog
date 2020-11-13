@@ -2,6 +2,7 @@
     <div class='auto'>
         <el-table
             :data="list.slice(pageStart, pageEnd)"
+            height="400"
             style="width: 100%" stripe max-height="530">
             <el-table-column v-for='(value, key) in fields' :prop="value.field" :label="value.desc" :key='key'>
             </el-table-column>
@@ -16,6 +17,7 @@
                 </template>
             </el-table-column>
         </el-table>
+        <el-button v-if="isAdd" type="primary" icon="el-icon-plus" plain style="width: 100%;" @click="$router.push({path: 'learn/new'})"/>
         <el-pagination v-if='isPagination' @current-change="handleCurrentChange" :current-page.sync="currentPage" :page-size="pageSize" layout="total, prev, pager, next" :total="list.length">
         </el-pagination>
     </div>
@@ -29,6 +31,10 @@ export default {
             default: '/api/learn'
         },
         isPagination: {
+            type: Boolean,
+            default: true
+        },
+        isAdd: {
             type: Boolean,
             default: true
         },

@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import routeReplaceSelf from '@/utils/routeReplaceSelf';
 
 Vue.use(Router);
 
@@ -17,27 +18,41 @@ export default new Router({
         },
         {
             path: '/',
-            name: '',
+            name: 'web',
             component: r => require.ensure([], () => r(require('@/pages/back/pages/index'))),
             children: [{
-                path: '/home/*',
-                name: 'BackHome',
-                component: r => require.ensure([], () => r(require('@/pages/back/pages/home')))
+                path: '/home',
+                name: 'home',
+                icon: 'icon-home',
+                component: routeReplaceSelf(r => require.ensure([], () => r(require('@/pages/back/pages/home')))),
+                children: [{
+                    path: '/home/test',
+                    name: 'test',
+                    component: routeReplaceSelf(r => require.ensure([], () => r(require('@/pages/back/pages/home/test'))))
+                }]
             }, {
-                path: '/learn/*',
-                name: 'BackLearn',
-                component: r => require.ensure([], () => r(require('@/pages/back/pages/learn')))
+                path: '/learn',
+                name: 'learn',
+                icon: 'icon-learn',
+                component: routeReplaceSelf(r => require.ensure([], () => r(require('@/pages/back/pages/learn')))),
+                children: [{
+                    path: '/learn/new',
+                    name: 'new',
+                    component: routeReplaceSelf(r => require.ensure([], () => r(require('@/pages/back/pages/learn/new'))))
+                }]
             }, {
-                path: '/poetry/*',
-                name: 'BackPoetry',
+                path: 'poetry',
+                name: 'poetry',
+                icon: 'icon-poetry',
                 component: r => require.ensure([], () => r(require('@/pages/back/pages/poetry')))
             }, {
-                path: '/about/*',
-                name: 'BackAbout',
+                path: 'about',
+                name: 'about',
+                icon: 'icon-about',
                 component: r => require.ensure([], () => r(require('@/pages/back/pages/about')))
             }, {
-                path: '/resource/*',
-                name: 'BackResource',
+                path: 'resource',
+                name: 'resource',
                 component: r => require.ensure([], () => r(require('@/pages/back/pages/resource')))
             }]
         },

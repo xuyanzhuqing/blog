@@ -3,10 +3,10 @@
         <el-header v-if='showAll' class='classic' height=''>
             <dl>
                 <dt>
-                    <el-row type="flex" justify="space-between">
-                        <el-col :span="6">分类查找</el-col>
-                        <el-col :span="6" style='text-align:right'><i class='el-icon-arrow-down' @click='classic.show = !classic.show'></i></el-col>
-                    </el-row>
+                    <el-input placeholder="查找文章" style='width: 250px;' v-model="filterText">
+                        <el-button slot="append" icon="el-icon-search"></el-button>
+                    </el-input>
+                    <i class='el-icon-arrow-down' @click='classic.show = !classic.show'></i>
                 </dt>
                 <dd v-if='classic.show'>
                     <span>主题：</span>
@@ -31,12 +31,6 @@
                         <el-radio label="java">java</el-radio>
                         <el-radio label="python">python</el-radio>
                     </el-radio-group>
-                </dd>
-                <dd>
-                    <el-input placeholder="查找文章" style='width: 250px;' v-model="filterText">
-                        <el-button slot="append" icon="el-icon-search"></el-button>
-                    </el-input>
-                    <el-button v-if='classic.show' type="primary" icon="el-icon-delete" @click='()=>{this.classic = {show: false};filterText=""}'></el-button>
                 </dd>
             </dl>
         </el-header>
@@ -156,14 +150,11 @@ export default {
 .classic {
     padding: 10px;
     border-bottom: 5px solid #f16e50;
-    background: #eaecea;
-    dt,
     dd {
         height: 30px;
     }
     dt {
         margin-bottom: 10px;
-        border-bottom: 1px solid #f16e50;
         line-height: 100%;
         color: #555;
         font-size: rem(16);

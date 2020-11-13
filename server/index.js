@@ -1,4 +1,4 @@
-const port = 80;
+const port = 8081;
 // 引入文件模块
 const fs = require('fs');
 // 引入处理路径的模块
@@ -26,7 +26,7 @@ const controllers = require('require-all')({
     }
 });
 const api = Object.keys(controllers).filter(v => v !== 'upload');
-console.info(controllers.upload)
+console.info(controllers.upload);
 api.forEach(v => app.use(controllers[v]));
 
 // 访问静态资源文件 这里是访问所有dist目录下的静态资源文件
@@ -38,6 +38,6 @@ app.get('/', function (req, res) {
 });
 // 监听8088端口
 app.listen(port, () => {
-	console.log('success listen ' + port + ' …………');
+    console.log('success listen ' + port + ' …………');
 });
 

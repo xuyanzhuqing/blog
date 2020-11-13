@@ -46,7 +46,6 @@ export default {
 @import '~@/assets/scss/caculate.scss';
 .top-header {
     height: 100%;
-    background: lightseagreen;
     margin: 0 auto;
     &>li.el-menu-item {
         font-size: rem(20);

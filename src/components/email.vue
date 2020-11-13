@@ -59,7 +59,7 @@ export default {
     },
     methods: {
         close () {
-            this.$emit('close');
+            this.show = false;
             this.initData();
         },
         initData () {
@@ -75,6 +75,10 @@ export default {
             this.$http.post('/api/email', this.form).then((res) => {
                 console.info(res);
                 this.mailLoading = false;
+                this.$message({
+                    message: '阁下，静等站主回复吧',
+                    type: 'success'
+                });
                 this.close();
             }).catch((err) => {
                 this.mailLoading = false;

@@ -19,12 +19,12 @@ module.exports =  {
 	},
 	Poetry: {
 		id: String,
-	    name: String,
-	    language: String,
-	    desc: String,
-	    author: String,
-	    content: '',
-	    lastModified: Date
+    name: String,
+    language: String,
+    desc: String,
+    author: String,
+    content: '',
+    lastModified: Date
 	},
 	Image: {
 		id: String,

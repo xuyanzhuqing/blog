@@ -219,8 +219,12 @@ export default {
     color: #f16e50;
     border-right: #dad9d5 1px solid;
     padding: 0 rem(10);
+    cursor: pointer;
     &:first-child {
       padding-left: 0;
+    }
+    &:last-child {
+      border: none;
     }
   }
 }
